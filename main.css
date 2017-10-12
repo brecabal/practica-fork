@@ -1,0 +1,30 @@
+/*hola*/
+/*usando class*/
+.azul{
+	background-color: blue;
+}
+/*cambiando colores a las etiquetas*/
+h1,h2,p{
+	color:white;
+}
+/* le sacamos la linea al enlace*/
+a{
+	color:white;
+	text-decoration: none;
+}
+/*USANDO ID*/
+#titulo{
+	background-color: red;
+}
+/*Llamando al li siguiente del primero*/
+li:first-of-type + li{
+	color:white;
+}
+/*llamando al primer hijo de ol*/
+ol li:first-child{
+	color:green;
+}
+/*llamando al ultimo hijo de ol*/
+li:last-child{
+	color:yellow;
+}

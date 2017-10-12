@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors -->
+<html lang="en-US" dir="ltr" class="" data-ffo-opensans="true" data-ffo-zillaslab="true"><head prefix="og: http://ogp.me/ns#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script async="" src="./Adjacent sibling combinator - CSS _ MDN_files/analytics.js"></script><script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+  
+    
+  
+
+  
+  <title>Adjacent sibling combinator - CSS | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+    <link rel="home" href="https://developer.mozilla.org/en-US/">
+    <link rel="copyright" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors#copyright">
+  
+
+  
+    
+    
+
+    
+          <link href="./Adjacent sibling combinator - CSS _ MDN_files/mdn-skinny.b2d9061c8deb.css" rel="stylesheet" type="text/css">
+      
+
+    
+  
+
+    
+        <link href="./Adjacent sibling combinator - CSS _ MDN_files/wiki-skinny.8dcc315e0a59.css" rel="stylesheet" type="text/css">
+    
+
+
+    
+
+  <link href="./Adjacent sibling combinator - CSS _ MDN_files/locale-en-US.7e45c23d7d30.css" rel="stylesheet" type="text/css">
+    <!-- common social tags -->
+    
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://cdn.mdn.mozilla.net/static/img/opengraph-logo.72382e605ce3.png">
+    <meta property="og:site_name" content="Mozilla Developer Network">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://cdn.mdn.mozilla.net/static/img/opengraph-logo.72382e605ce3.png">
+    <meta name="twitter:site" content="@MozDevNet">
+    <meta name="twitter:creator" content="@MozDevNet">
+    <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network">
+  
+
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://cdn.mdn.mozilla.net/static/img/favicon144.0d89fc050967.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://cdn.mdn.mozilla.net/static/img/favicon114.57ce6f6d1857.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://cdn.mdn.mozilla.net/static/img/favicon72.deefe20a0360.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="https://cdn.mdn.mozilla.net/static/img/favicon57.930938a93373.png">
+  <!-- basic favicon -->
+  
+    
+  
+  <link rel="shortcut icon" href="https://cdn.mdn.mozilla.net/static/img/favicon32-local.329e8131018f.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script type="text/javascript" src="https://cdn.mdn.mozilla.net/static/build/js/html5shiv.3948ccddab6f.js" charset="utf-8"></script>
+  <![endif]-->
+
+  <script type="text/javascript" src="./Adjacent sibling combinator - CSS _ MDN_files/font-check.f6a4c7250869.js" charset="utf-8"></script>
+
+  
+  <link rel="alternate" type="application/json" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors$json">
+  <link rel="canonical" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors">
+
+  
+    
+      <link rel="alternate" hreflang="ca" href="https://developer.mozilla.org/ca/docs/Web/CSS/Selectors_de_germans_adjacents" title="Selectors de germans adjacents">
+    
+      <link rel="alternate" hreflang="de" href="https://developer.mozilla.org/de/docs/Web/CSS/Adjacent_sibling_selectors" title="Angrenzende Geschwisterselektoren">
+    
+      <link rel="alternate" hreflang="es" href="https://developer.mozilla.org/es/docs/Web/CSS/Selectores_hermanos_adyacentes" title="Selectores de hermanos adyacentes">
+    
+      <link rel="alternate" hreflang="fr" href="https://developer.mozilla.org/fr/docs/Web/CSS/S%C3%A9lecteur_de_voisin_direct" title="Sélecteur de voisin direct">
+    
+      <link rel="alternate" hreflang="it" href="https://developer.mozilla.org/it/docs/Web/CSS/selettore_fratelli_adiacenti" title="Selettore di Fratelli Adiacenti">
+    
+      <link rel="alternate" hreflang="ja" href="https://developer.mozilla.org/ja/docs/Web/CSS/Adjacent_sibling_selectors" title="隣接セレクタ">
+    
+      <link rel="alternate" hreflang="ko" href="https://developer.mozilla.org/ko/docs/Web/CSS/%EC%9D%B8%EC%A0%91_%ED%98%95%EC%A0%9C_%EC%84%A0%ED%83%9D%EC%9E%90" title="인접 형제 선택자">
+    
+      <link rel="alternate" hreflang="ru" href="https://developer.mozilla.org/ru/docs/Web/CSS/Adjacent_sibling_selectors" title="Смежные селекторы">
+    
+      <link rel="alternate" hreflang="zh-CN" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Adjacent_sibling_selectors" title="相邻兄弟选择器">
+    
+  
+
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="Adjacent sibling combinator">
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors">
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors">
+  <meta name="twitter:title" content="Adjacent sibling combinator">
+  
+  <meta property="og:description" content="The adjacent sibling combinator (+) separates two selectors and matches the second element only if it immediately follows the first element, and both are children of the same parent element.">
+  <meta name="description" content="The adjacent sibling combinator (+) separates two selectors and matches the second element only if it immediately follows the first element, and both are children of the same parent element.">
+  <meta name="twitter:description" content="The adjacent sibling combinator (+) separates two selectors and matches the second element only if it immediately follows the first element, and both are children of the same parent element.">
+  
+
+
+  
+    
+
+<script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-36116321-5', 'mozilla.org');
+    ga('set', 'anonymizeIp', true);
+
+    
+
+    // dimension9 == "Section editing"
+    
+        // dimension12 == 'Page Revision'
+        ga('set', 'dimension12', '1305165');
+        // dimension17 == 'English Slug'
+        ga('set', 'dimension17', 'Web/CSS/Adjacent_sibling_selectors');
+
+    (function() {
+        // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+        var win = window;
+        var removeUtms = function(){
+            var location = win.location;
+            if (location.href.indexOf('utm') != -1 && win.history.replaceState) {
+                win.history.replaceState({}, '', location.pathname);
+            }
+        };
+
+        ga('send', 'pageview', {'hitCallback': removeUtms});
+    })();
+</script>
+
+  
+<script async="" data-manual="true" src="./Adjacent sibling combinator - CSS _ MDN_files/syntax-prism.66bd4038bff3.js"></script></head>
+<body data-slug="Web/CSS/Adjacent_sibling_selectors" contextmenu="edit-history-menu" data-search-url="" class="document   ">
+
+  <script type="text/javascript">
+    // make sure global mdn object exists
+    var mdn = window.mdn || {};
+
+    (function(win) {
+        'use strict';
+
+        
+            (function(){
+  var FLAGS = {
+    'compat_api': false,'kumaediting': false,'line_length': false,'page_move': false,'redesign_beta': false,'redesign_live': false,'registration_disabled': false,'sample_frame': false,'search_suggestions': false,'section_edit': false,'sg_task_completion': false,'spam_admin_override': false,'spam_checks_enabled': true,'spam_spammer_override': false,'spam_submissions_enabled': false,'spam_testing_mode': false,'wiki_samples': true,'wiki_spam_exempted': false,'wiki_spam_training': false
+    },
+    SWITCHES = {
+    'wiki_error_on_delete': false,'wiki_force_immediate_rendering': false,'enable_optimizely': false,'welcome_email': true,'application_ACAO': true,'store_revision_ips': true,'dumb_doc_urls': true,'newsletter': true,'newsletter_article': true,'foundation_callout': false,'helpful-survey-2': true
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+        
+
+        // This needs to be set before ckeditor.js loads
+        window.CKEDITOR_BASEPATH = '/static/js/libs/ckeditor/build/ckeditor/';
+
+        // Site configuration
+        win.mdn.ckeditor = {};
+        win.mdn.features = {};
+        win.mdn.staticPath = 'https://cdn.mdn.mozilla.net/static/';
+        win.mdn.optimizely = win['optimizely'] || [];
+        win.mdn.wiki = {
+            autosuggestTitleUrl: '/en-US/docs/get-documents'
+        };
+        win.mdn.assets = {
+            css: {
+                'editor-content': ['https://cdn.mdn.mozilla.net/static/build/styles/editor-content.4b63a9347c67.css','https://cdn.mdn.mozilla.net/static/build/styles/editor-locale-en-US.7e45c23d7d30.css',
+                ]
+            },
+            js: {
+                'syntax-prism': ['https://cdn.mdn.mozilla.net/static/build/js/syntax-prism.66bd4038bff3.js',]
+            }
+        };
+
+        win.mdn.notifications = [];
+
+        
+
+        // interactive editor config
+        win.mdn.interactiveEditor = {
+            siteUrl: "https://developer.mozilla.org",
+            editorUrl: "https://interactive-examples.mdn.mozilla.net"
+        };
+
+    })(this);
+</script>
+    
+  <ul id="nav-access">
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors#document-main" id="skip-main">Skip to main content</a></li>
+    <li><a id="skip-language" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors#language">Select language</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors#q" id="skip-search">Skip to search</a></li>
+  </ul>
+
+  <!-- Header -->
+  <header id="main-header"><div class="center">
+    <a href="https://developer.mozilla.org/en-US/" class="logo">MDN Web Docs</a>
+
+    <div id="nav-sec">
+    
+      <ul>
+      <li class="nav-login"><div class="login">
+    
+        
+        <a href="https://developer.mozilla.org/users/github/login/?next=%2Fen-US%2Fdocs%2FWeb%2FCSS%2FAdjacent_sibling_selectors" class="login-link js-login-link" data-service="GitHub">
+            Sign in
+            <i class="icon-github" aria-hidden="true"></i>
+        </a>
+    
+</div></li>
+      </ul>
+    
+    </div>
+
+    <nav id="main-nav" class="nav-main" role="navigation"><ul><li class="nav-main-item"><a href="https://developer.mozilla.org/en-US/docs/Web">Technologies<i aria-hidden="true" class="icon-caret-down"></i></a>
+      <div class="submenu js-submenu" id="nav-tech-submenu">
+        <div class="submenu-column">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics">Graphics</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP">HTTP</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API">APIs / DOM</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions">Browser Extensions</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/MathML">MathML</a></li>
+          </ul>
+        </div></div></li><li class="nav-main-item"><a href="https://developer.mozilla.org/en-US/docs/Learn">References &amp; Guides<i aria-hidden="true" class="icon-caret-down"></i></a>
+        <div class="submenu js-submenu" id="nav-learn-submenu">
+        <div class="submenu-column">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Learn">Learn web development</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Tutorials">Tutorials</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Reference">References</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide">Developer Guides</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">Accessibility</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Games">Game development</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web">...more docs</a></li>
+          </ul>
+        </div>
+      </div>
+      </li><li class="nav-main-item"><a href="https://developer.mozilla.org/en-US/docs/MDN/Feedback">Feedback<i aria-hidden="true" class="icon-caret-down"></i></a>
+        <div class="submenu js-submenu" id="nav-contact-submenu">
+          <div class="submenu-column">
+            <ul>
+              <li><a href="https://support.mozilla.org/">Get Firefox help<i aria-hidden="true" class="icon-external-link"></i></a></li>
+              <li><a href="https://stackoverflow.com/">Get web development help<i aria-hidden="true" class="icon-external-link"></i></a></li>
+            </ul>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/MDN/Community">Join the MDN community</a></li>
+              <li><a target="_blank" href="https://bugzilla.mozilla.org/form.doc?bug_file_loc=https%3A//developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors">Report a content problem<i aria-hidden="true" class="icon-external-link"></i></a></li>
+              <li><a target="_blank" href="https://bugzilla.mozilla.org/form.mdn">Report a bug<i aria-hidden="true" class="icon-external-link"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li class="nav-main-search"><form action="https://developer.mozilla.org/en-US/search" method="get" role="search">
+        <div class="search-wrap">
+          <label for="main-q" class="offscreen">Search</label>
+          <input type="search" id="main-q" name="q" placeholder="Search" data-value="" value="">
+          <span class="search-trigger"><i aria-hidden="true" class="icon-search"></i></span>
+          <button type="submit" class="offscreen">Search</button>
+        </div>
+      </form></li></ul></nav>
+  </div></header> 
+
+  <!-- Content will go here -->
+  <main id="content">
+      
+  <!-- heading -->
+  <div id="wiki-document-head" class="document-head">
+    <div class="center">
+      
+        <!-- crumbs -->
+        
+  <nav class="crumbs" role="navigation"><ol xmlns:v="http://rdf.data-vocabulary.org/#" aria-label="breadcrumbs">
+    <li typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US" rel="v:url" property="v:title">MDN</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Web" rel="v:url" property="v:title">Web technology for developers</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" rel="v:url" property="v:title">CSS</a></li>
+    
+    <li class="crumb" typeof="v:Breadcrumb" property="v:title">Adjacent sibling combinator</li>
+  </ol></nav>
+      
+
+      <!-- action buttons -->
+      <div class="document-actions">
+        
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  <ul class="page-buttons">
+      <li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-language"></i></button>
+
+        <div class="submenu js-submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+              
+                
+                
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/ca/docs/Web/CSS/Selectors_de_germans_adjacents" title="Catalan">Català (ca)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/de/docs/Web/CSS/Adjacent_sibling_selectors" title="German">Deutsch (de)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/es/docs/Web/CSS/Selectores_hermanos_adyacentes" title="Spanish">Español (es)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/fr/docs/Web/CSS/S%C3%A9lecteur_de_voisin_direct" title="French">Français (fr)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/it/docs/Web/CSS/selettore_fratelli_adiacenti" title="Italian">Italiano (it)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/ja/docs/Web/CSS/Adjacent_sibling_selectors" title="Japanese">日本語 (ja)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/ko/docs/Web/CSS/%EC%9D%B8%EC%A0%91_%ED%98%95%EC%A0%9C_%EC%84%A0%ED%83%9D%EC%9E%90" title="Korean">한국어 (ko)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/ru/docs/Web/CSS/Adjacent_sibling_selectors" title="Russian">Русский (ru)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Adjacent_sibling_selectors" title="Chinese (Simplified)">中文 (简体) (zh-CN)</a></bdi></li>
+                
+              
+
+              
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors$locales" rel="nofollow, noindex" id="translations-add">Add a translation</a></li>
+              
+            </ul>
+          </div>
+        </div>
+      </li>
+      
+      <li class="page-buttons-edit"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors$edit" class="button neutral" data-optimizely-hook="button-edit-doc" id="edit-button" rel="nofollow, noindex">Edit<i aria-hidden="true" class="icon-pencil"></i></a></li>
+      
+
+        
+
+        <li class="page-buttons-advanced"><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Advanced</span><i aria-hidden="true" class="icon-cog"></i></button>
+        <div class="submenu js-submenu" id="advanced-menu-submenu">
+          <!-- this page -->
+          <div class="submenu-column">
+            <div class="title">Advanced</div>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors$history" rel="nofollow, noindex">History</a></li>
+                
+                
+                
+
+
+                
+
+                
+                
+                
+                <li class="page-print"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors#" onclick="return window.print();">Print this article</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+      </div>
+
+      <div class="document-title">
+        
+
+        <h1><wbr>Adjacent sibling combinator</h1>
+      </div>
+    </div>
+  </div>
+
+      <div class="center clear">
+      
+
+    <div class="wiki-main-content" id="document-main" role="main"><div class="center">
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-right-present wiki-left-present">
+
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+            
+              <!-- TOC, approvals, etc -->
+              <div class="column-strip wiki-column" id="wiki-right">
+              
+              <!-- table of contents -->
+              <div id="toc" class="toc toggleable" data-closed="true">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors#toc" class="title toggler" data-open-icon="icon-caret-right" data-closed-icon="icon-caret-down" aria-haspopup="true">In This Article<i class="icon-caret-right"></i></a>
+                <ol class="toggle-container" aria-expanded="false" style="">
+                  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors#Syntax" rel="internal">Syntax</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors#Example" rel="internal">Example</a><ol><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors#CSS" rel="internal">CSS</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors#HTML" rel="internal">HTML</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors#Result" rel="internal">Result</a></li></ol></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors#Specifications" rel="internal">Specifications</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors#Browser_compatibility" rel="internal">Browser compatibility</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors#See_also" rel="internal">See also</a>
+                </li></ol>
+              </div>
+              
+              </div>
+            
+
+
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-half wiki-column text-content">
+
+              
+
+              
+              
+
+              
+
+              
+                
+              
+              
+
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                
+                  
+                    
+                    <div><section class="Quick_links" id="Quick_Links"><!-- --></section></div>
+
+<p>The <strong>adjacent sibling combinator</strong> (<code>+</code>) separates two selectors and matches the second element only if it <em>immediately</em> follows the first element, and both are children of the same parent <a title="Element is the most general base class from which all objects in a Document inherit. It only has methods and properties common to all kinds of element. More specific classes inherit from Element." href="https://developer.mozilla.org/en-US/docs/Web/API/Element"><code>element</code></a>.</p>
+
+<pre class="brush: css no-line-numbers  language-css"><code class=" language-css"><span class="token comment" spellcheck="true">/* Paragraphs that come immediately after any image */</span>
+<span class="token selector">img + p </span><span class="token punctuation">{</span>
+  <span class="token property">font-style</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Syntax" class="highlight-spanned"><span class="highlight-span">Syntax</span></h2>
+
+<pre class="syntaxbox">former_element + target_element { <em>style properties</em> }
+</pre>
+
+<h2 id="Example" class="highlight-spanned"><span class="highlight-span">Example</span></h2>
+
+<h3 id="CSS">CSS</h3>
+
+<pre class="brush: css line-numbers  language-css"><code class=" language-css"><span class="token selector">li<span class="token pseudo-class">:first-of-type</span> + li </span><span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="HTML">HTML</h3>
+
+<pre class="brush: html line-numbers  language-html"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>One<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Two!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Three<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Result">Result</h3>
+
+<p><iframe src="./Adjacent sibling combinator - CSS _ MDN_files/Example.html" class="live-sample-frame sample-code-frame" height="100" width="200" id="frame_Example" frameborder="0"></iframe><div class="open-in-host-container"><button class="open-in-host">Open in CodePen <i class="icon-codepen" aria-hidden="true"></i></button><button class="open-in-host">Open in JSFiddle <i class="icon-jsfiddle" aria-hidden="true"></i></button></div></p>
+
+<h2 id="Specifications" class="highlight-spanned"><span class="highlight-span">Specifications</span></h2>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a lang="en" hreflang="en" href="https://drafts.csswg.org/selectors-4/#adjacent-sibling-combinators" class="external external-icon">Selectors Level&nbsp;4<br><small lang="en-US">The definition of 'next-sibling combinator' in that specification.</small></a></td>
+   <td><span class="spec-WD">Working Draft</span></td>
+   <td>Renames it the "next-sibling" combinator.</td>
+  </tr>
+  <tr>
+   <td><a lang="en" hreflang="en" href="https://drafts.csswg.org/selectors-3/#adjacent-sibling-combinators" class="external external-icon">Selectors Level&nbsp;3<br><small lang="en-US">The definition of 'Adjacent sibling combinator' in that specification.</small></a></td>
+   <td><span class="spec-REC">Recommendation</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a lang="en" hreflang="en" href="http://www.w3.org/TR/CSS2/selector.html#adjacent-selectors" class="external external-icon">CSS Level&nbsp;2 (Revision&nbsp;1)<br><small lang="en-US">The definition of 'Adjacent sibling selectors' in that specification.</small></a></td>
+   <td><span class="spec-REC">Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table>
+
+<h2 id="Browser_compatibility" class="highlight-spanned"><span class="highlight-span">Browser compatibility</span></h2>
+
+<p></p><div class="htab">
+    <a id="AutoCompatibilityTable" name="AutoCompatibilityTable"></a>
+    <ul>
+        <li class="selected"><a>Desktop</a></li>
+        <li><a>Mobile</a></li>
+    </ul>
+<div id="compat-desktop" style="display: block;">
+<table class="compat-table">
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Edge</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td>7.0<sup>[1]</sup></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+  </tr>
+ </tbody>
+</table>
+</div><div id="compat-mobile" style="display: none;">
+<table class="compat-table">
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Edge</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Mobile</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>2.1</td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+  </tr>
+ </tbody>
+</table>
+</div></div><p></p>
+
+
+
+
+
+<p>[1] Internet Explorer 7 doesn't update the style correctly when an element is dynamically placed before an element that matched the selector. In Internet Explorer 8, if an element is inserted dynamically by clicking on a link the first-child style isn't applied until the link loses focus.</p>
+
+<h2 id="See_also" class="highlight-spanned"><span class="highlight-span">See also</span></h2>
+
+<ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_selectors">General sibling selectors</a></li>
+</ul>
+                  
+                
+
+              
+                <aside class="helpful-survey" id="helpful-survey">
+                  <p>Was this article helpful?</p>
+
+                  <div class="helpful-survey-content">
+                    <div class="helpful-survey-buttons">
+                      <button type="button" class="helpful-survey-vote helpful-survey-yes">
+                        <span class="offscreen">Yes</span>
+                        <i class="icon-thumbs-o-up" aria-hidden="true"></i>
+                      </button>
+                      <button type="button" class="helpful-survey-vote helpful-survey-no">
+                        <span class="offscreen">No</span>
+                        <i class="icon-thumbs-o-down" aria-hidden="true"></i>
+                      </button>
+                    </div>
+
+                    <div class="helpful-survey-thankyou">Thank you!</div>
+                  </div>
+                </aside>
+              
+              </article>
+
+              <!-- contributors -->
+              <div class="wiki-block contributors">
+                <h2 class="offscreen">Document Tags and Contributors</h2>
+                
+                
+  <div class="tag-attach-list contributors-sub">
+    <i aria-hidden="true" class="icon-tags icon-fw"></i>
+    <strong>Tags:</strong>&nbsp;
+    <ul class="tags tags-small">
+      
+        <li><a href="https://developer.mozilla.org/en-US/docs/tag/CSS" rel="nofollow, noindex">CSS</a></li>
+      
+        <li><a href="https://developer.mozilla.org/en-US/docs/tag/NeedsMobileBrowserCompatibility" rel="nofollow, noindex">NeedsMobileBrowserCompatibility</a></li>
+      
+        <li><a href="https://developer.mozilla.org/en-US/docs/tag/Reference" rel="nofollow, noindex">Reference</a></li>
+      
+        <li><a href="https://developer.mozilla.org/en-US/docs/tag/Selectors" rel="nofollow, noindex">Selectors</a></li>
+      
+    </ul>
+  </div>
+
+
+                
+                  <div class="contributors-sub">
+                    <i aria-hidden="true" class="icon-group icon-fw"></i>&nbsp;<strong>Contributors to this page:</strong> 
+        <a href="https://developer.mozilla.org/en-US/profiles/mfluehr">mfluehr</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/wbamberg">wbamberg</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/KadirTopal">KadirTopal</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/erikadoyle">erikadoyle</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/jsx">jsx</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Jezer">Jezer</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/cvrebert">cvrebert</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Sebastianz">Sebastianz</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/teoli">teoli</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/jlanus">jlanus</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/zacharytamas">zacharytamas</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/motoxer4533">motoxer4533</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/khs">khs</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/FredB">FredB</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Sheppy">Sheppy</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/dhar">dhar</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/tregagnon">tregagnon</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/tw2113">tw2113</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/BYK">BYK</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Miken32">Miken32</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Wjjohnst">Wjjohnst</a>
+    
+                  </div>
+                
+
+                
+                  <div class="contributors-sub">
+                    <i aria-hidden="true" class="icon-clock-o icon-fw"></i>&nbsp;<strong>Last updated by:</strong>
+                    <a href="https://developer.mozilla.org/en-US/profiles/mfluehr">mfluehr</a>,
+                    <time datetime="2017-09-18T12:57:40.994701-07:00">Sep 18, 2017, 12:57:40 PM</time>
+                  </div>
+                
+              </div>
+            </div>
+
+            
+              <!-- quick links and zone subnav strip -->
+              <div id="wiki-left" class="column-strip wiki-column">
+
+                
+
+                
+                  <!-- quick links -->
+                  
+  <div class="quick-links" id="quick-links">
+    <div class="title see-also">See also</div>
+    <ol><li><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></strong></li><li><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">CSS Reference</a></strong></li><li><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">CSS Selectors</a></strong></li><li data-default-state="open" class="toggleable current" data-closed=""><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors#" class="toggler" aria-haspopup="true"><i aria-hidden="true" class="icon-caret-down"></i><strong>Guides</strong></a><ol class="toggle-container" aria-expanded="true" style="display: block;"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors/Using_the_:target_pseudo-class_in_selectors" title="When a URL points at a specific piece of a document, it can be difficult for the user to notice. Find out how you can use some simple CSS to draw attention to the target of a URL and improve the user&#39;s experience.">Using the :target pseudo-class in selectors</a></li></ol></li><li data-default-state="open" class="toggleable current" data-closed=""><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors#" class="toggler" aria-haspopup="true"><i aria-hidden="true" class="icon-caret-down"></i><strong>Basic Selectors</strong></a><ol class="toggle-container" aria-expanded="true" style="display: block;"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors" title="The CSS type selector matches elements by node name. In other words, it selects all elements of the given type within a document."><code>Type selectors</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors" title="The CSS class selector matches elements based on the contents of their class attribute."><code>Class selectors</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors" title="In an HTML document, the CSS ID selector matches an element based on the value of its id attribute. The selected element&#39;s ID attribute must match exactly the value given in the selector."><code>ID selectors</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors" title="The CSS universal selector (*) matches elements of any type."><code>Universal selectors</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors" title="The CSS attribute selector matches elements based on the presence or value of a given attribute."><code>Attribute selectors</code></a></li></ol></li><li data-default-state="open" class="toggleable current" data-closed=""><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors#" class="toggler" aria-haspopup="true"><i aria-hidden="true" class="icon-caret-down"></i><strong>Combinators</strong></a><ol class="toggle-container" aria-expanded="true" style="display: block;"><li><em><code>Adjacent sibling combinator</code></em></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_selectors" title="The general sibling combinator (~) separates two selectors and matches the second element only if it follows the first element (though not necessarily immediately), and both are children of the same parent element."><code>General sibling combinator</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Child_selectors" title="The child combinator (&gt;) is placed between two CSS selectors. It matches only those elements matched by the second selector that are the children of elements matched by the first."><code>Child combinator</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_selectors" title="The descendant combinator — typically represented by a single space ( ) character — combines two selectors such that elements matched by the second selector are selected if they have an ancestor element matching the first selector. Selectors that utilize a descendant combinator are called descendant selectors."><code>Descendant combinator</code></a></li></ol></li><li data-default-state="open" class="toggleable current" data-closed=""><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors#" class="toggler" aria-haspopup="true"><i aria-hidden="true" class="icon-caret-down"></i><strong>Pseudo-classes</strong></a><ol class="toggle-container" aria-expanded="true" style="display: block;"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:active" title="The :active CSS pseudo-class represents an element (such as a button) that is being activated by the user."><code>:active</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:any" title="The :any() pseudo-class lets you create a selector containing multiple options, any one of which will be matched. This is a simpler alternative to repeating an entire selector multiple times because one item inside it varies."><code>:any</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:any-link" title="The :any-link CSS pseudo-class selector represents an element that acts as the source anchor of a hyperlink independent of whether it has been visited, that is, it matches every &lt;a&gt;, &lt;area&gt;, or &lt;link&gt; element with an href attribute. Thus, it matches all elements that match :link or :visited."><code>:any-link</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:checked" title="The :checked CSS pseudo-class selector represents any radio (&lt;input type=&quot;radio&quot;&gt;), checkbox (&lt;input type=&quot;checkbox&quot;&gt;) or option (&lt;option&gt; in a &lt;select&gt;) element that is checked or toggled to an on state. The user can change this state by clicking on the element, or selecting a different value, in which case the :checked pseudo-class no longer applies to this element, but will to the relevant one."><code>:checked</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:default" title="The :default CSS pseudo-class represents any user interface element that is the default among a group of similar elements. For example, the default button in a set of buttons could be selected using this pseudo-class."><code>:default</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:dir" title="The :dir() CSS pseudo-class matches elements based on the directionality of the text contained in it. In HTML, the direction is determined by the dir attribute. For other document types there may be other document methods for determining the language."><code>:dir()</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled" title="The :disabled CSS pseudo-class represents any disabled element. An element is disabled if it can&#39;t be activated (e.g. selected, clicked on or accept text input) or accept focus. The element also has an enabled state, in which it can be activated or accept focus."><code>:disabled</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:empty" title="The :empty pseudo-class represents any element that has no children at all. Only element nodes and text (including whitespace) are considered. Comments or processing instructions do not affect whether an element is considered empty or not."><code>:empty</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:enabled" title="The :enabled CSS pseudo-class represents any enabled element. An element is enabled if it can be activated (e.g. selected, clicked on or accept text input) or accept focus. The element also has a disabled state, in which it can&#39;t be activated or accept focus."><code>:enabled</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:first" title="The :first @page CSS pseudo-class describes the styling of the first page when printing a document."><code>:first</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child" title="The :first-child CSS pseudo-class represents the first element among a group of sibling elements."><code>:first-child</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:first-of-type" title="The :first-of-type CSS pseudo-class represents the first element of its type among a group of sibling elements."><code>:first-of-type</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen" title="The :fullscreen CSS pseudo-class selects any element that&#39;s displayed when the browser is in fullscreen mode."><code>:fullscreen</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus" title="The :focus CSS pseudo-class represents an element (such as a form input) that has received focus. It is generally triggered when the user clicks or taps on an element or selects it with the keyboard&#39;s tab key."><code>:focus</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within" title="The :focus-within CSS pseudo-class matches any element that the :focus pseudo-class matches or that has a descendant that the :focus pseudo-class matches. (This includes descendants in shadow trees.)"><code>:focus-within</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover" title="The :hover CSS pseudo-class matches when the user interacts with an element with a pointing device, but does not necessarily activate it. It is generally triggered when the user hovers over an element with the cursor (mouse pointer)."><code>:hover</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate" title="The :indeterminate CSS pseudo-class selects any form element whose state is indeterminate."><code>:indeterminate</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:in-range" title="The :in-range CSS pseudo-class matches when the value currently contained inside an &lt;input&gt; element is inside the range limits specified by the min and max attributes."><code>:in-range</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid" title="The :invalid CSS pseudo-class selects any &lt;input&gt; or &lt;form&gt; element whose content fails to validate according to the input&#39;s attribute settings. This allows you to easily have invalid fields adopt an appearance that helps the user identify and correct errors."><code>:invalid</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:lang" title="The :lang CSS pseudo-class matches elements based on the language the element is determined to be in. In HTML, the language is determined by a combination of the lang attribute, the &lt;meta&gt; element, and possibly by information from the protocol (such as HTTP headers)."><code>:lang</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:last-child" title="The :last-child CSS pseudo-class represents the last element among a group of sibling elements."><code>:last-child</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:last-of-type" title="The :last-of-type CSS pseudo-class represents the last element of its type among a group of sibling elements."><code>:last-of-type</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:left" title="The :left CSS page pseudo-class matches any left page when printing a document. It allows you to describe the styling of left-side pages."><code>:left</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:link" title="The :link CSS pseudo-class represents links (such as an anchor) that have not yet been visited."><code>:link</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:not" title="The negation CSS pseudo-class, :not(X), has a functional notation taking a simple selector X as an argument. It matches elements that are not represented by the argument. X must not contain another negation selector. X may also not target a pseudo element."><code>:not()</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child" title="The :nth-child(an+b) CSS pseudo-class matches an element that has an+b-1 siblings before it, where n is positive or zero. More simply stated, the selector matches elements whose numeric position in a series of siblings matches the pattern an+b."><code>:nth-child</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-last-child" title="The :nth-last-child(an+b) CSS pseudo-class matches an element that has an+b-1 siblings after it, where n is positive or zero. It is essentially the same as :nth-child, except it counts items backwards from the end, not forwards from the beginning."><code>:nth-last-child</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-last-of-type" title="The :nth-last-of-type(an+b) CSS pseudo-class matches an element that has an+b-1 siblings of the same type after it, where n is positive or zero. It is essentially the same as :nth-of-type, except it counts items backwards from the end, not the beginning."><code>:nth-last-of-type</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-of-type" title="The :nth-of-type(an+b) CSS pseudo-class matches an element that has an+b-1 siblings of the same type before it, where n is positive or zero."><code>:nth-of-type</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:only-child" title="The :only-child CSS pseudo-class represents an element without any siblings. This is the same as :first-child:last-child or :nth-child(1):nth-last-child(1), but with a lower specificity."><code>:only-child</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:only-of-type" title="The :only-of-type CSS pseudo-class represents an element that has no siblings of the same type."><code>:only-of-type</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:optional" title="The :optional CSS pseudo-class selects any &lt;input&gt; or &lt;textarea&gt; element that does not have the required attribute set on it. This allows forms to easily indicate optional fields, and to style them accordingly."><code>:optional</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:out-of-range" title="The :out-of-range CSS pseudo-class matches when an element has its value attribute outside the specified range limitations for this element. It allows the page to give a feedback that the value currently defined using the element is outside the range limits. A value can be outside of a range if it is either smaller or larger than maximum and minimum set values."><code>:out-of-range</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:placeholder-shown" title="The :placeholder-shown CSS pseudo-class represents any form element displaying placeholder text."><code>:placeholder-shown</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:read-only" title="The :read-only CSS pseudo-class selects an element (such as a locked text input) that is not editable by the user."><code>:read-only</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:read-write" title="The :read-write CSS pseudo-class represents an element (such as a text input) that is editable by the user."><code>:read-write</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:required" title="The :required CSS pseudo-class represents any &lt;input&gt; element that has the required attribute set on it. This allows forms to easily indicate which fields must have valid data before the form can be submitted."><code>:required</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:right" title="The :right CSS page pseudo-class matches any right page when printing a page. It allows you to describe the styling of right-side pages."><code>:right</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:root" title="The :root CSS  pseudo-class matches the root element of a tree representing the document. In HTML, :root represents the &lt;html&gt; element and is identical to the selector html, except that its specificity is higher."><code>:root</code></a></li><li><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:scope" title="The :scope CSS  pseudo-class targets the elements that are a reference point for selectors to match against."><code>:scope</code></a></s></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:target" title="The :target CSS pseudo-class represents a unique element (the target element) with an id matching the URL&#39;s fragment."><code>:target</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:valid" title="The :valid CSS pseudo-class represents any &lt;input&gt; or &lt;form&gt; element whose content validates correctly according to the input&#39;s type setting. This allows to easily make valid fields adopt an appearance that helps the user confirm that their data is formatted properly."><code>:valid</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:visited" title="The :visited CSS pseudo-class lets you select only links that have been visited."><code>:visited</code></a></li></ol></li><li data-default-state="open" class="toggleable current" data-closed=""><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_selectors#" class="toggler" aria-haspopup="true"><i aria-hidden="true" class="icon-caret-down"></i><strong>Pseudo-elements</strong></a><ol class="toggle-container" aria-expanded="true" style="display: block;"><li><span class="sidebar-icon"><span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></span><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-moz-progress-bar" title="The ::-moz-progress-bar CSS pseudo-element is a Mozilla extension that represents the progress bar inside a &lt;progress&gt; element. (The bar represents the amount of progress that has been made.)"><code>::-moz-progress-bar</code></a></li><li><span class="sidebar-icon"><span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></span><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-moz-range-progress" title="The ::-moz-range-progress CSS pseudo-element is a Mozilla extension that represents the lower portion of the track (i.e., groove) in which the indicator slides in an &lt;input&gt; of type=&quot;range&quot;. This portion corresponds to values lower than the value currently selected by the thumb (i.e., virtual knob)."><code>::-moz-range-progress</code></a></li><li><span class="sidebar-icon"><span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></span><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-moz-range-thumb" title="The ::-moz-range-thumb CSS pseudo-element is a Mozilla extension that represents the thumb (i.e., virtual knob) of an &lt;input&gt; of type=&quot;range&quot;. The user can move the thumb along the input&#39;s track to alter its numerical value."><code>::-moz-range-thumb</code></a></li><li><span class="sidebar-icon"><span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></span><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-moz-range-track" title="The ::-moz-range-track CSS pseudo-element is a Mozilla extension that represents the track (i.e., groove) in which the indicator slides in an &lt;input&gt; of type=&quot;range&quot;."><code>::-moz-range-track</code></a></li><li><span class="sidebar-icon"><span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></span><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-ms-fill" title="The ::-ms-fill CSS pseudo-element represents the filled-in portion of a &lt;progress&gt; element. This pseudo-element is non-standard and specific to Internet Explorer 10+, hence the vendor prefix."><code>::-ms-fill</code></a></li><li><span class="sidebar-icon"><span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></span><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-ms-fill-lower" title="The ::-ms-fill-lower CSS pseudo-element represents the portion of the &quot;track&quot; (the groove in which the indicator aka thumb slides) of an &lt;input&gt; of type=&quot;range&quot;, which corresponds to values lower than the value currently selected by the thumb."><code>::-ms-fill-lower</code></a></li><li><span class="sidebar-icon"><span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></span><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-ms-fill-upper" title="The ::-ms-fill-upper CSS pseudo-element represents the portion of the &quot;track&quot; (the groove in which the indicator aka thumb slides) of an &lt;input&gt; of type=&quot;range&quot;, which corresponds to values greater than the value currently selected by the thumb."><code>::-ms-fill-upper</code></a></li><li><span class="sidebar-icon"><span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></span><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-ms-thumb" title="The ::-ms-thumb CSS pseudo-element represents the &quot;thumb&quot; that the user can move within the &quot;groove&quot; of an &lt;input&gt; of type=&quot;range&quot; to alter its numerical value."><code>::-ms-thumb</code></a></li><li><span class="sidebar-icon"><span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></span><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-ms-track" title="The ::-ms-track CSS pseudo-element represents the &quot;track&quot; (the groove in which the indicator slides) of an &lt;input&gt; of type=&quot;range&quot;."><code>::-ms-track</code></a></li><li><span class="sidebar-icon"><span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></span><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-progress-bar" title="The ::-webkit-progress-bar CSS pseudo-element represents the entire bar of a &lt;progress&gt; element. Normally it&#39;s only visible as the unfilled portion of the bar, since by default it&#39;s rendered below the ::-webkit-progress-value pseudo-element. It is a child of the ::-webkit-progress-inner-element pseudo-element and the parent of the ::-webkit-progress-value pseudo-element."><code>::-webkit-progress-bar</code></a></li><li><span class="sidebar-icon"><span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></span><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-progress-value" title="The ::-webkit-progress-value CSS pseudo-element represents the filled-in portion of the bar of a &lt;progress&gt; element. It is a child of the ::-webkit-progress-bar pseudo-element."><code>::-webkit-progress-value</code></a></li><li><span class="sidebar-icon"><span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></span><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-slider-runnable-track" title="The ::-webkit-slider-runnable-track CSS pseudo-element represents the &quot;track&quot; (the groove in which the indicator slides) of an &lt;input&gt; of type=&quot;range&quot;."><code>::-webkit-slider-runnable-track</code></a></li><li><span class="sidebar-icon"><span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></span><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-slider-thumb" title="The ::-webkit-slider-thumb CSS pseudo-element represents the &quot;thumb&quot; that the user can move within the &quot;groove&quot; of an &lt;input&gt; of type=&quot;range&quot; to alter its numerical value."><code>::-webkit-slider-thumb</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::after" title="In CSS, ::after creates a pseudo-element that is the last child of the selected element. It is often used to add cosmetic content to an element with the content property."><code>::after (:after)</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::backdrop" title="The ::backdrop CSS pseudo-element is a box rendered immediately below any element rendered in fullscreen mode (and above any lower elements in the stack). Fullscreen elements are part of the top layer&#39;s stack, i.e., they are rendered in front of all other content."><code>::backdrop</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::before" title="In CSS, ::before creates a pseudo-element that is the first child of the selected element. It is often used to add cosmetic content to an element with the content property."><code>::before (:before)</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter" title="The ::first-letter CSS pseudo-element applies styles to the first letter of the first line of a block-level element, but only when not preceded by other content (such as images or inline tables)."><code>::first-letter (:first-letter)</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line" title="The ::first-line CSS pseudo-element applies styles to the first line of a block-level element."><code>::first-line (:first-line)</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::selection" title="The ::selection CSS pseudo-element applies styles to the portion of a document that has been highlighted by the user (such as with the mouse)."><code>::selection</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::cue" title="The ::cue CSS pseudo-element matches WebVTT cues within a selected element. This can be used to style captions and other cues in media with VTT tracks."><code>::cue (:cue)</code></a></li></ol></li></ol>
+  </div>
+                
+
+                <!-- approvals -->
+                
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+    
+      <div class="newsletter-box">
+      <div class="newsletter">
+    <form id="newsletterForm" class="newsletter-form nodisable" name="newsletter-form" action="https://www.mozilla.org/en-US/newsletter/" method="post">
+        <div class="newsletter-head">
+            <h2 class="newsletter-teaser">Learn the best of web development</h2>
+            <p class="newsletter-description">Get the latest and greatest from MDN delivered straight to your inbox.</p>
+            
+        </div>
+
+        <div class="newsletter-fields">
+            <input type="hidden" id="fmt" name="fmt" value="H">
+            <input type="hidden" id="newsletterNewslettersInput" name="newsletters" value="app-dev">
+            <div id="newsletterErrors" class="newsletter-errors"></div>
+
+            <div id="newsletterEmail" class="form-group newsletter-group-email">
+                <label for="newsletterEmailInput" class="form-label offscreen">E-mail</label>
+                <input type="email" id="newsletterEmailInput" name="email" class="form-input newsletter-input-email" required="" placeholder="you@example.com" size="30">
+            </div>
+
+            <div id="newsletterPrivacy" class="form-group form-group-agree newsletter-group-privacy hidden">
+                <input type="checkbox" id="newsletterPrivacyInput" name="privacy" required="">
+                <label for="newsletterPrivacyInput">
+                I'm okay with Mozilla handling my info as explained in this <a href="https://www.mozilla.org/privacy/">Privacy Policy</a>.
+                </label>
+            </div>
+            <div id="newsletterSubmit" class="newsletter-group-submit">
+                <button id="newsletter-submit" type="submit" class="button neutral newsletter-submit">Sign up now</button>
+            </div>
+        </div>
+    </form>
+    <div id="newsletterThanks" class="newsletter-thanks hidden">
+        <h2>Thanks! Please check your inbox to confirm your subscription.</h2>
+        <p>If you haven’t previously confirmed a subscription to a Mozilla-related newsletter you may have to do so. Please check your inbox or your spam filter for an email from us.
+        </p>
+    </div>
+    <button id="newsletterHide" type="button" class="only-icon newsletter-hide"><span>Hide Newsletter Sign-up</span><i aria-hidden="true" class="icon-times"></i></button>
+</div>
+      </div>
+    
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="/en-US/docs/Web/CSS/Adjacent_sibling_selectors$edit" label="Edit page"></menuitem>
+    <menuitem data-action="/en-US/docs/Web/CSS/Adjacent_sibling_selectors$history" label="View page history"></menuitem>
+  </menu>
+
+      </div>
+  </main>
+
+  <!-- redesign notices -->
+  
+  <!-- Footer -->
+    <footer id="nav-footer" class="nav-footer">
+      <div class="center">
+          <a href="https://developer.mozilla.org/en-US/" class="nav-footer-logo">MDN Web Docs</a>
+          <div class="footer-group footer-group-mdn">
+            <h2 class="footer-title">MDN</h2>
+            <ul class="footer-list">
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web">Web Technologies</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Learn">Learn Web Development</a></li>
+              <li><a href="https://developer.mozilla.org/docs/MDN/About">About MDN</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/MDN/Feedback">Feedback</a></li>
+              <li class="footer-social"><a href="https://twitter.com/mozdevnet" class="only-icon"><i aria-hidden="true" class="icon-twitter"></i> <span>Twitter</span></a></li>
+              <li class="footer-social"><a href="https://github.com/mdn/" class="only-icon"><i aria-hidden="true" class="icon-github"></i> <span>GitHub</span></a></li>
+            </ul>
+          </div>
+
+          <a href="https://mozilla.org/" class="nav-footer-mozilla">Mozilla</a>
+          <div class="footer-group footer-group-mozilla">
+            <h2 class="footer-title">Mozilla</h2>
+            <ul class="footer-list">
+              <li><a href="https://www.mozilla.org/about/">About</a></li>
+              <li><a href="https://www.mozilla.org/contact/">Contact Us</a></li>
+              <li><a href="https://donate.mozilla.org/?utm_source=developer.mozilla.org&amp;utm_medium=referral&amp;utm_content=footer">Donate</a></li>
+              <li><a href="https://www.mozilla.org/firefox/?utm_source=developer.mozilla.org&amp;utm_campaign=footer&amp;utm_medium=referral">Firefox</a></li>
+              <li class="footer-social"><a href="https://twitter.com/mozilla" class="only-icon"><i aria-hidden="true" class="icon-twitter"></i> <span>Twitter</span></a></li>
+              <li class="footer-social"><a href="https://www.facebook.com/mozilla" class="only-icon"><i aria-hidden="true" class="icon-facebook"></i> <span>Facebook</span></a></li>
+              <li class="footer-social"><a href="https://www.instagram.com/mozillagram/" class="only-icon"><i aria-hidden="true" class="icon-instagram"></i> <span>Instagram</span></a></li>
+            </ul>
+          </div>
+
+          
+            
+  
+    <form class="languages go" method="get" action="https://developer.mozilla.org/en-US/docs/Web">
+      <label for="language">Other languages:</label>
+      <select id="language" class="wiki-l10n" name="next" dir="ltr">
+        <option title="English (US)" value="/en-US/docs/Web/CSS/Adjacent_sibling_selectors" selected="">
+          English (US) (en-US)
+        </option>
+        
+          <option title="Catalan" value="/ca/docs/Web/CSS/Selectors_de_germans_adjacents">
+            Català (ca)
+          </option>
+          <option title="German" value="/de/docs/Web/CSS/Adjacent_sibling_selectors">
+            Deutsch (de)
+          </option>
+          <option title="Spanish" value="/es/docs/Web/CSS/Selectores_hermanos_adyacentes">
+            Español (es)
+          </option>
+          <option title="French" value="/fr/docs/Web/CSS/S%C3%A9lecteur_de_voisin_direct">
+            Français (fr)
+          </option>
+          <option title="Italian" value="/it/docs/Web/CSS/selettore_fratelli_adiacenti">
+            Italiano (it)
+          </option>
+          <option title="Japanese" value="/ja/docs/Web/CSS/Adjacent_sibling_selectors">
+            日本語 (ja)
+          </option>
+          <option title="Korean" value="/ko/docs/Web/CSS/%EC%9D%B8%EC%A0%91_%ED%98%95%EC%A0%9C_%EC%84%A0%ED%83%9D%EC%9E%90">
+            한국어 (ko)
+          </option>
+          <option title="Russian" value="/ru/docs/Web/CSS/Adjacent_sibling_selectors">
+            Русский (ru)
+          </option>
+          <option title="Chinese (Simplified)" value="/zh-CN/docs/Web/CSS/Adjacent_sibling_selectors">
+            中文 (简体) (zh-CN)
+          </option>
+      </select>
+      <noscript>&lt;button type="submit"&gt;Go&lt;/button&gt;</noscript>
+    </form>
+  
+
+          
+
+          
+            <ul class="footer-tos">
+              <li><a href="https://www.mozilla.org/about/legal/terms/mozilla">Terms</a></li>
+              <li><a href="https://www.mozilla.org/privacy/websites/">Privacy</a></li>
+              <li><a href="https://www.mozilla.org/privacy/websites/#cookies">Cookies</a></li>
+            </ul>
+
+            <div class="contentinfo">
+              <p>© 2005-2017 Mozilla and individual contributors.</p> <p>Content is available under <a href="https://developer.mozilla.org/en-US/docs/MDN/About#Copyrights_and_licenses">these licenses</a>.</p>
+            </div>
+          
+      </div>
+    </footer> 
+
+  <!-- site js -->
+  
+    
+    <!--[if lte IE 8]><script type="text/javascript" src="https://cdn.mdn.mozilla.net/static/build/js/selectivizr.091e18cf669b.js" charset="utf-8"></script><![endif]-->
+
+    
+    <script type="text/javascript" src="./Adjacent sibling combinator - CSS _ MDN_files/javascript.b28203373cc1.js"></script>
+    <script type="text/javascript" src="./Adjacent sibling combinator - CSS _ MDN_files/main.0a73d7502ddf.js" charset="utf-8"></script>
+    
+      <script>
+        if(window.mdn && mdn.analytics) mdn.analytics.trackOutboundLinks();
+      </script>
+    
+    
+
+  
+
+    
+        <script async="" type="text/javascript" src="./Adjacent sibling combinator - CSS _ MDN_files/wiki-skinny.2187d581918b.js" charset="utf-8"></script>
+    
+
+
+
+  
+
+  
+
+  
+
+  
+    <script async="" type="text/javascript" src="./Adjacent sibling combinator - CSS _ MDN_files/newsletter.7cd3274169f2.js" charset="utf-8"></script>
+  
+
+
+
+</body></html>
